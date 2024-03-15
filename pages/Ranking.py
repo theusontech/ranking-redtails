@@ -27,6 +27,9 @@ classes = ["Todas as Classes"] + df_data["Classe"].unique().tolist()
 # Mostra um seletor de caixa de seleção na barra lateral para escolher a classe
 selected_class = st.sidebar.selectbox("Classes", classes)
 
+# Adiciona a imagem abaixo do menu na barra lateral
+st.sidebar.image("logo.png", use_column_width=True)
+
 # Se "Todas as Classes" não foi selecionada
 if selected_class != "Todas as Classes":
     # Filtra os dados para mostrar apenas os jogadores da classe selecionada
@@ -36,3 +39,6 @@ if selected_class != "Todas as Classes":
 else:
     # Exibe todos os jogadores de todas as classes
     st.write(df_data)
+
+# Adiciona um texto abaixo dos dados
+st.write("Atualizado 15/03/2024 as 19h.")
